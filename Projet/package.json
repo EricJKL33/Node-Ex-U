@@ -1,0 +1,11 @@
+{
+  "name": "projet-demo",
+  "version": "1.0.0",
+  "description": "Demo utilisation npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ERIC",
+  "license": "MIT"
+}
