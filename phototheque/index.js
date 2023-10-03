@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const albumRoutes = require("./routes/album.routes");
 
 const app = express();
 
@@ -14,8 +15,10 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.send("ok");
+  res.render("album", { title: "Album" });
 });
+
+app.use("/", albumRoutes);
 
 app.use((req, res) => {
   res.status(404);
@@ -23,5 +26,5 @@ app.use((req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("Server started (http://localhost:3000/) !");
+  console.log("Server started (http://localhost:3000) !");
 });
