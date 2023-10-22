@@ -42,6 +42,12 @@ app.use((req, res) => {
   res.send("Page not found !");
 });
 
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500);
+  res.send("Erreur interne du serveur");
+});
+
 app.listen(3000, () => {
   console.log("Server started (http://localhost:3000) !");
 });
